@@ -21,7 +21,7 @@ RSpec.describe "Authentication", type: :request do
   end
 
   context "failure" do
-    it "returns back an authentication payload" do
+    it "returns back an error payload" do
       post(user_session_path, params: { user: user_params.slice(:email) })
       expect(json_response["error"]).to eq("Invalid Email or password.")
       expect(response.headers["Authorization"]).to be_blank
