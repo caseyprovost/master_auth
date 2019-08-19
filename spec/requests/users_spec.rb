@@ -9,7 +9,7 @@ RSpec.describe "Users", type: :request do
   let(:user_params) do
     {
       email: user.email,
-      password: user.password
+      password: user.password,
     }
   end
 

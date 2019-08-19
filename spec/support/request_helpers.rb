@@ -7,8 +7,8 @@ module RequestHelpers
 
   def default_headers
     @default_headers ||= {
-      'Accept' => 'application/json',
-      'Content-Type' => 'application/json'
+      "Accept" => "application/json",
+      "Content-Type" => "application/json",
     }
   end
 

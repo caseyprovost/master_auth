@@ -12,7 +12,7 @@ gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 
-#gem "devise-jwt"
+# gem "devise-jwt"
 gem "rack-cors"
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -41,7 +41,6 @@ end
 group :test do
   gem "rspec-rails", "~> 4.0.0.beta2"
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

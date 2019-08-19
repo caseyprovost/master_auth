@@ -8,13 +8,13 @@ RSpec.describe "Authentication", type: :request do
   let(:user_params) do
     {
       email: user.email,
-      password: user.password
+      password: user.password,
     }
   end
 
   context "success" do
     it "returns back an authentication payload" do
-      post(user_session_path, params: { user: user_params })
+      post(user_session_path, params: {user: user_params})
       expect(json_response["email"]).to eq(user.email)
       expect(response.headers["Authorization"]).to include("Bearer ")
     end
@@ -22,7 +22,7 @@ RSpec.describe "Authentication", type: :request do
 
   context "failure" do
     it "returns back an error payload" do
-      post(user_session_path, params: { user: user_params.slice(:email) })
+      post(user_session_path, params: {user: user_params.slice(:email)})
       expect(json_response["error"]).to eq("Invalid Email or password.")
       expect(response.headers["Authorization"]).to be_blank
     end

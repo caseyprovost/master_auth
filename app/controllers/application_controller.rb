@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::API
   include ActionController::MimeResponds
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   before_action :authenticate_user!
   respond_to :json
@@ -11,6 +11,6 @@ class ApplicationController < ActionController::API
   private
 
   def render_404
-    render json: { error: "The specified entity does not exist" }, status: 404
+    render json: {error: "The specified entity does not exist"}, status: 404
   end
 end
