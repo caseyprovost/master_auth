@@ -3,16 +3,16 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.2"
+ruby "2.6.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.0.0.rc1"
+gem "rails", "~> 6.0.0"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 
-gem "devise-jwt", "~> 0.5.9"
+#gem "devise-jwt"
 gem "rack-cors"
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -35,11 +35,11 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-commands-rspec"
-  gem "rubocop"
+  gem "standard"
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.8"
+  gem "rspec-rails", "~> 4.0.0.beta2"
 end
 
 
