@@ -12,6 +12,7 @@ RUN apk add --update --virtual runtime-deps postgresql-client nodejs libffi-dev 
 WORKDIR /tmp
 ADD Gemfile* ./
 
+RUN gem update --system
 RUN gem install bundler && gem update bundler
 
 RUN apk add --virtual build-deps build-base postgresql-dev libc-dev linux-headers libxml2-dev libxslt-dev readline-dev && \
@@ -24,11 +25,12 @@ COPY . $APP_HOME
 WORKDIR $APP_HOME
 
 # Configure development environment variables
-ENV RAILS_ENV=development \
-    RACK_ENV=development
+ENV RAILS_ENV=production \
+    RACK_ENV=production
 
 # Expose port 3000 from the container
-EXPOSE 3000
+EXPOSE 80
+EXPOSE 443
 
 # Run puma server by default
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
