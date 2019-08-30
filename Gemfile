@@ -12,7 +12,7 @@ gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 
-# gem "devise-jwt"
+gem "devise-jwt"
 gem "rack-cors"
 
 # Reduces boot times through caching; required in config/boot.rb
